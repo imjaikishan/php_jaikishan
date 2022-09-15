@@ -33,9 +33,8 @@
 	$checkuser = "SELECT * from ed where email='$email'";
 	$result    = mysqli_query($conn,$checkuser);
 	$count     = mysqli_num_rows($result);
-    echo "'\u{1F389}'";
 	if($count>0){
-		// echo 'User already signed up with this email';
+		die ( 'User already signed up with this mail' );
 	}
 	else{
 
