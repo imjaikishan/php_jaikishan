@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Subscription</title>
+</head>
+<body>
+	<h id="post"><b><h3>Thank You! Your Subscription has been activated &#128079;</h3></b></h>
+
+</body>
+</html>
 <?php
 
 
@@ -16,7 +30,6 @@ if ( isset( $_GET['vkey'] ) ) {
 		$update = $conn->query( "UPDATE ed SET verified = 1 WHERE vkey = '$vkey' LIMIT 1" );
 
 		if ( $update ) {
-			echo 'Your account has been verified';
 			$comic = get_comic();
 			$title = $comic->safe_title;
 
@@ -48,5 +61,3 @@ if ( isset( $_GET['vkey'] ) ) {
 } else {
 	die( 'Something went wrong' );
 }
-
-	echo '<p id="post"><h><b>Thank You! Your Subscription has been activated &#128079</h></b></p>';

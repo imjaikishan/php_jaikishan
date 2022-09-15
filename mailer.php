@@ -10,6 +10,7 @@ if ( $stmt->num_rows > 0 ) {
 
 	while ( $stmt->fetch() ) {
 			$comic = get_comic();
+			unset( $attachments );
 			$title = $comic->safe_title;
 
 		$file = file_get_contents( $comic->img );
@@ -21,7 +22,8 @@ if ( $stmt->num_rows > 0 ) {
 			'type'     => 'application/pdf',
 			'encoding' => 'base64',
 		);
-		$body          = '
+		print_r( $attachments );
+		$body = '
 	   		<p >Hello Subscriber</p>
 	   		Here is your Comic for the day
 	   		<h3>' . $comic->safe_title . "</h3>
