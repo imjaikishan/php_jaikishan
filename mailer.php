@@ -1,6 +1,6 @@
 <?php
 require_once './inc/functions.php';
-$conn = mysqli_connect( 'localhost', 'jai', 'kishanJai@13', 'user' );
+$conn = mysqli_connect( 'sql6.freemysqlhosting.net' , 'sql6519889' , 'SNTJXSWpSs' , 'sql6519889' );
 $stmt = $conn->prepare( 'SELECT email FROM `ed` WHERE verified = 1' );
 $stmt->execute();
 $mailtoarr = array();
